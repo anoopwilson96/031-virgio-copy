@@ -4,7 +4,7 @@ function Home() {
   return (
     <>
     <h1>
-     Summer Sales
+     Home Sweet home
     </h1>
     
     
