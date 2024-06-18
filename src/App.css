@@ -1,4 +1,13 @@
 .cartIcon{
-  height: 75px;
+  height: 38px;
 
+}
+.homeAdd{
+  margin-top: 3rem;
+  padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: burlywood;
+  height: 25vh;
+  max-width: 100%;
 }
