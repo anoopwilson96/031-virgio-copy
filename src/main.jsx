@@ -8,7 +8,9 @@ import App from './App.jsx'
 import './index.css'
 import Root from '../routes/root.jsx';
 import ErrorPage from './error-page.jsx';
-import Home from '../routes/home.jsx';
+import Home, {loader as homeLoader} from '../routes/home.jsx';
+import Categories,{loader as categoriesLoader} from '../routes/productRelated/categories.jsx';
+import Category from '../routes/productRelated/category.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,8 +20,19 @@ const router = createBrowserRouter([
     children : [
       {
         path: "/",
-        element: <Home/>
+        element: <Home/>,
+        loader: homeLoader 
       },
+      {
+        path: "/categories",
+        element:<Categories/>,
+        loader: categoriesLoader
+      },
+      {
+        path: "/categories/:categoryId",
+        element: <Category/>
+      }
+
     ]
   },
 
