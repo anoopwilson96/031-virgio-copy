@@ -8,6 +8,11 @@ export default {
   ],
   theme: {
     extend: {},
+    theme: {
+      container: {
+        center: true,
+      },
+    },
   },
   plugins: [],
 }
