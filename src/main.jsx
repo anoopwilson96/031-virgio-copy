@@ -10,7 +10,7 @@ import Root from '../routes/root.jsx';
 import ErrorPage from './error-page.jsx';
 import Home, {loader as homeLoader} from '../routes/home.jsx';
 import Categories,{loader as categoriesLoader} from '../routes/productRelated/categories.jsx';
-import Category from '../routes/productRelated/category.jsx';
+import Category, {loader as categoryLoader} from '../routes/productRelated/category.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +30,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/categories/:categoryId",
-        element: <Category/>
+        element: <Category/>,
+        loader: categoryLoader
       }
 
     ]
