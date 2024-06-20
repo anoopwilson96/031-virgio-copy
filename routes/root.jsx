@@ -7,16 +7,17 @@ function Root() {
   return (
     <>
     <header className=''>
-      <div className='flex  justify-center flex-wrap gap-1 items-center mt-3 '>
+      <div >
+        <Link to={`/`} className='flex  justify-center flex-wrap gap-1 items-center mt-3 ' >
         <img className='cartIcon ' src="./media/myfavicon.png.svg"  alt="" />
         <h2 className='text-3xl'>
           DressCart 
         </h2>
-        
+        </Link>
       </div>
       <div>
       <div>
-          <ul className=' mt-10 flex flex-row justify-evenly  mx-0 p-2 gap-1'>
+          <ul className=' mt-10 flex flex-row  justify-between max-w-2xl    mx-auto p-2 '>
             <li className='border py-1 px-4 rounded-lg  border-red-500 text-red-600'>
               <Link to={'/'} > Home </Link>
             </li>
@@ -47,7 +48,7 @@ function Root() {
           </div>
         </div>
         <div>
-          <ul className='mt-8 flex flex-row justify-evenly my-2 mx-5'>
+          <ul className='mt-8 flex flex-row justify-evenly max-w-2xl my-2 mx-auto'>
             <li className='border-b-4  border-red-200  hover:border-red-500 '> Contact Us</li>
             <li className='border-b-4  border-red-200  hover:border-red-500 '>About Us</li>
             <li className='border-b-4  border-red-200  hover:border-red-500 '>Careers</li>
