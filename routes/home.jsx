@@ -1,5 +1,6 @@
 import React from 'react'
-import { useLoaderData } from 'react-router-dom';
+import { Link,useLoaderData } from 'react-router-dom';
+import Categories from './productRelated/categories';
 
 
 export async function loader() {
@@ -37,13 +38,17 @@ function Home() {
         <div className='mt-5 grid grid-cols-2 grid-rows-2 gap-6'>
           { categories.map(category=>{
             return(
-            <button  key={category._id} className=' border py-1 px-4 rounded-lg  border-red-500 text-red-600 hover:bg-red-300'>
+              <Link  key={category._id} to={`/categories/${category._id}`}> 
+              <button  className=' border py-1 px-4 rounded-lg  border-red-500 text-red-600 hover:bg-red-300'  >
               {category.categoryName}
-            </button>)
+              </button>
+              </Link>
+)
           })
           }
         </div>
       </div>
+      <Categories/>
     </main>
   )
 }
