@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link,useLoaderData } from 'react-router-dom';
 import Categories from './productRelated/categories';
+import ProductsAll from './productRelated/productsAll';
 
 
 export async function loader() {
@@ -48,7 +49,7 @@ function Home() {
           }
         </div>
       </div>
-      <Categories/>
+
     </main>
   )
 }
