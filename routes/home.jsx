@@ -1,14 +1,18 @@
 import React from 'react'
 import { Link,useLoaderData } from 'react-router-dom';
-import Categories from './productRelated/categories';
-import ProductsAll from './productRelated/productsAll';
+
 
 
 export async function loader() {
   try {
     const response = await fetch('http://localhost:3000/categories');
     const categories= await response.json()
-    return { categories };
+
+
+  //code for fetching 20 product list
+  const productResponse = await fetch(`http://localhost:3000/products`)
+  const products = await productResponse.json()
+    return { categories,products };
     
   } catch (error) {
     console.log("Error in fetching") 
@@ -16,7 +20,7 @@ export async function loader() {
 } 
 
 function Home() {
-  const {categories}  = useLoaderData()
+  const {categories,products}  = useLoaderData()
   // console.log (categories)
   
   return (
@@ -34,7 +38,7 @@ function Home() {
       </div>
 
       <div className="mainTwo flex flex-col  justify-items-center mt-5 items-center">
-        <h1> Shop By Category</h1>
+        <h1 className='text-2xl'> Shop By Category</h1>
 
         <div className='mt-5 grid grid-cols-2 grid-rows-2 gap-6'>
           { categories.map(category=>{
@@ -50,8 +54,60 @@ function Home() {
         </div>
       </div>
 
+      <div>
+        <h1 className='flex flex-row text-2xl justify-center' >Our popular products</h1>
+        <div>
+          
+      {products ? (
+        <section className="container max-w-5xl mx-auto grid gap-5 p-5 sm:grid-cols-1 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3">
+          {products.map((product) => (
+        <article key={product._id} className="productList flex flex-col">
+        <Link to={`/products/${product._id}`}>
+        <img
+          src={product.mainImage}
+          alt=""
+        />
+        </Link>
+    
+        <div className="productDetails">
+        <Link to={`/products/${product._id}`}>
+        <h3 className="h6">{product.brand}</h3>
+        </Link>
+    
+          <div>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>☆ </span>
+          </div>
+          <div className="priceAndButton flex flex-row gap-5">
+            <span className="p">${product.price}</span>
+            <button className="border px-2 rounded bg-gray-800 text-white button buttonPrimary">Add to cart</button>
+          </div>
+        </div>
+      </article>
+          ))}
+        </section>
+      ) : (
+        <p>Loading products...</p>
+      )}
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
     </main>
   )
 }
 
 export default Home
+
+
