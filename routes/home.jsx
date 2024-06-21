@@ -37,8 +37,8 @@ function Home() {
 
       </div>
 
-      <div className="mainTwo flex flex-col  justify-items-center mt-5 items-center">
-        <h1 className='text-2xl'> Shop By Category</h1>
+      <div className="mainTwo flex flex-col  justify-items-center mt-5 items-center border-t-2 border-b-2 p-5 border-red-500">
+        <h1 className='text-2xl font-semibold  '> Shop By Category</h1>
 
         <div className='mt-5 grid grid-cols-2 grid-rows-2 gap-6'>
           { categories.map(category=>{
@@ -55,13 +55,13 @@ function Home() {
       </div>
 
       <div>
-        <h1 className='flex flex-row text-2xl justify-center' >Our popular products</h1>
+        <h1 className='flex flex-row text-2xl justify-center font-semibold mt-3' >Our popular products</h1>
         <div>
           
       {products ? (
         <section className="container max-w-5xl mx-auto grid gap-5 p-5 sm:grid-cols-1 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3">
           {products.map((product) => (
-        <article key={product._id} className="productList flex flex-col">
+        <article key={product._id} className="productList flex flex-col border-b-2 p-5 border-red-500">
         <Link to={`/products/${product._id}`}>
         <img
           src={product.mainImage}
