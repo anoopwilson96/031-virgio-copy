@@ -2,6 +2,7 @@
 
 
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, useLoaderData } from 'react-router-dom';
 
 
@@ -20,6 +21,7 @@ export async function loader({params}) {
 
 function ProductsAll() {
   const { products } = useLoaderData();
+  const dispatch = useDispatch
 
   return (
     <main>
@@ -51,7 +53,7 @@ function ProductsAll() {
           </div>
           <div className="priceAndButton flex flex-row gap-5">
             <span className="p">${product.price}</span>
-            <button className="border px-2 rounded bg-gray-800 text-white button buttonPrimary">Add to cart</button>
+            <button onClick={()=> {dispatch(addItemToCart(product))}}  className="border px-2 rounded bg-gray-800 text-white button buttonPrimary">Add to cart</button>
           </div>
         </div>
       </article>
