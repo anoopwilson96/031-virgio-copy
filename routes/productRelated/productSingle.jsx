@@ -1,5 +1,7 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import { Link, useLoaderData,} from 'react-router-dom'
+import { addItemToCart } from '../../src/features/cart/cartSlice';
 
 
 
@@ -13,7 +15,7 @@ export async function loader({params}) {
 
 function ProductSingle() {
   const {product} = useLoaderData()
-  console.log(product)
+  const dispatch = useDispatch()
   return (
 
 <>    
@@ -41,7 +43,7 @@ function ProductSingle() {
       </div>
       <div className="priceAndButton flex flex-row gap-5">
         <span className="p">$ {product.price}</span>
-        <button className="border px-2 rounded bg-gray-800 text-white button buttonPrimary">Add to cart</button>
+        < button onClick={()=> {dispatch(addItemToCart(product))}} className="border px-2 rounded bg-gray-800 text-white button buttonPrimary"  > Add to cart</button>
       </div>
     </div>
   </article>
