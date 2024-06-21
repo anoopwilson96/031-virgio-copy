@@ -10,7 +10,7 @@ function Root() {
       <div >
         <Link to={`/`} className='flex  justify-center flex-wrap gap-1 items-center mt-3 ' >
         <img className='cartIcon ' src="./media/myfavicon.png.svg"  alt="" />
-        <h2 className='text-3xl'>
+        <h2 className='text-3xl font-bold'>
           DressCart 
         </h2>
         </Link>
@@ -24,9 +24,17 @@ function Root() {
             
              <li className='border py-1 px-4 rounded-lg  border-red-500 text-red-600'>
               <Link to={'/categories'}>Categories</Link>
-            </li> 
+            </li>
+
             <li className='border py-1 px-4 rounded-lg  border-red-500 text-red-600'>Login</li>
             <li className='border py-1 px-4 rounded-lg  border-red-500 text-red-600'>Logout</li>
+
+            <li>
+            <Link to={'/cart'}>
+            <span  className=" border py-1 px- rounded-lg  border-red-500 text-red-600 material-symbols-outlined">local_mall</span>
+            </Link>
+            </li>
+
           </ul>
         </div>
 
