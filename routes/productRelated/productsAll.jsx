@@ -4,6 +4,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useLoaderData } from 'react-router-dom';
+import { addItemToCart } from '../../src/features/cart/cartSlice';
 
 
 
