@@ -27,11 +27,11 @@ function Root() {
             </li>
 
             <li className='border py-1 px-4 rounded-lg  border-red-500 text-red-600'>Login</li>
-            <li className='border py-1 px-4 rounded-lg  border-red-500 text-red-600'>Logout</li>
+            {/* <li className='border py-1 px-4 rounded-lg  border-red-500 text-red-600'>Logout</li> */}
 
             <li>
             <Link to={'/cart'}>
-            <span  className=" border py-1 px- rounded-lg  border-red-500 text-red-600 material-symbols-outlined">local_mall</span>
+            <span  className="   text-red-600 material-symbols-outlined">local_mall</span>
             </Link>
             </li>
 
